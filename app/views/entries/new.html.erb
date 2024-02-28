@@ -1,4 +1,4 @@
-<h1>New Entry</h1>
+<h1>New Entry for <%= @place["name"]%> </h1>
 
 <form action="/entries" method = "post">
 <p>
@@ -13,12 +13,14 @@
   <label for ="posted_on">Posted On</label>
   <input type ="date" name="posted_on" id="posted_on">
 </p>
-<p>
-  <label for ="name">Place</label>
-  <input type ="varchar" name="name" id="name">
-</p>
 
+<p>
+   <input type ="hidden" name="place_id" id="place_id" value="<%=params["place_id"]%>">
+</p>
 <button>Submit</button>
 <br><br>
 
 </form>
+
+<br><br>
+<a href="/places/<%=@place["id"]%>">Back</a>
