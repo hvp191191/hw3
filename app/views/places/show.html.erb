@@ -1,8 +1,15 @@
 <h1><%= @place["name"] %></h1>
 
 <p>
-Placeholder for second part <br>
-Ate Tacos at <%= @place["created_at"] %>
+<br>
+<% for entry in @entries%>
+<li>
+  <%= entry["title"]%>
+  <%= entry["description"]%>
+  <%= entry["posted_on"]%>
+<% end %>
 </p>
+<br><br>
+<a href="/entries/new">New Post</a>
 <br><br>
 <a href="/places">Back to all Places</a>
